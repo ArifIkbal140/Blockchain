@@ -10,8 +10,8 @@ class Transaction:
 
 class BlockchainUTXO:
     def __init__(self):
-        self.utxo = {}   # wallet -> balance
-        self.chain = []
+        self.utxo = {}   # wallet -> balance  utxo = dictionary → wallet এর current balance track করে।
+        self.chain = []  #chain = list → সব transactions কে store করে।
 
     def create_transaction(self, tx):
         if tx.sender != "SYSTEM":
@@ -23,9 +23,12 @@ class BlockchainUTXO:
 
         self.utxo[tx.receiver] = self.utxo.get(tx.receiver,0) + tx.amount
         self.chain.append(tx)
-        print("Transaction successful")
+        print("Transaction successful")   #Sender এর balance কমানো হয়। #Receiver এর balance বৃদ্ধি পায়।
 
-    def show_balances(self):
+
+
+
+    def show_balances(self): #সব wallet এর current balance দেখায়।
         print("\nBalances:")
         for user,balance in self.utxo.items():
             print(user,":",balance)
@@ -38,3 +41,12 @@ bc.create_transaction(Transaction("Alice","Bob",20))
 bc.create_transaction(Transaction("Bob","Charlie",10))
 
 bc.show_balances()
+
+
+
+'''
+এখানে মূল লক্ষ্য হলো UTXO-based blockchain এর কাজ দেখানো।
+
+UTXO = Unspent Transaction Output → মানে হলো প্রতিটি wallet-এ কত balance আছে, যা এখনও খরচ হয়নি।
+
+প্রোগ্রামটি blockchain-এর মতো transaction management করে, কিন্তু সহজভাবে, mining বা hash logic ছাড়া।'''

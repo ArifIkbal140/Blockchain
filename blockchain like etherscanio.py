@@ -47,3 +47,25 @@ bc.add_block(["A->B 5 BTC", "C->D 2 BTC"])
 bc.add_block(["E->F 1 BTC"])
 
 bc.display()
+
+
+
+'''এখানে মূল বিষয়গুলো:
+
+Implement a blockchain – অর্থাৎ Python দিয়ে একটি ব্লকচেইন তৈরি করতে হবে।
+
+Print all fields – প্রতিটি ব্লকের সব গুরুত্বপূর্ণ তথ্য দেখাতে হবে।
+
+Etherscan style – Etherscan হলো Ethereum blockchain explorer। এখানে ব্লক দেখানোর সময় যে তথ্য দেখায়, তার মতো fields প্রিন্ট করতে হবে। মূল fields সাধারণতঃ:
+
+Block Number (Height)
+
+Timestamp (Created at)
+
+Transactions (Block এ থাকা ট্রানজ্যাকশন)
+
+Previous Hash (আগের ব্লকের hash)
+
+Nonce (Proof-of-work এর জন্য)
+
+Hash (বর্তমান ব্লকের hash)##'''

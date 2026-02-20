@@ -22,7 +22,7 @@ class Block:
 # -------- Create Blocks --------
 blockchain = []
 
-genesis = Block(0, "Genesis Block", "0")
+genesis = Block(0, "Genesis Block", "0")  #Genesis block তৈরি করা হলো → প্রথম block সব blockchain এ থাকে।
 blockchain.append(genesis)
 
 for i in range(1,5):
@@ -41,3 +41,7 @@ for block in blockchain:
     print("Prev Hash:", block.previous_hash)
     print("Hash:", block.hash)
     print("-"*40)
+
+
+
+#for run = python3 "Create 4 Blocks, Traverse & Print.py"
