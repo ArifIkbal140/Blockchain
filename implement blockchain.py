@@ -3,7 +3,7 @@ Write a program in Python to implement blockchain.
 """
 
 
-import hashlib
+import hashlib   #SHA-256 হ্যাশ তৈরি করার জন্য
 import time
 
 class Block:
@@ -27,7 +27,7 @@ class Blockchain:
         return Block(0, "Genesis Block", "0")
 
     def get_latest_block(self):
-        return self.chain[-1]
+        return self.chain[-1]   #➡ চেইনের শেষ ব্লকটি রিটার্ন করে।
 
     def add_block(self, data):
         prev_block = self.get_latest_block()
@@ -39,6 +39,7 @@ class Blockchain:
 bc = Blockchain()
 bc.add_block("First block data")
 bc.add_block("Second block data")
+bc.add_block("Third block data")
 
 for block in bc.chain:
     print(block.__dict__)

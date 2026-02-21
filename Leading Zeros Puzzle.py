@@ -26,3 +26,35 @@ print("\nSolution Found!")
 print("Input String:", text)
 print("Nonce:", nonce)
 print("Hash:", hash_val)
+
+
+'''আউটপুটে দেখাবে:
+
+Input String
+
+Nonce
+
+Generated Hash'''
+
+'''এটি একটি Proof of Work (Mining Simulation) এর সহজ উদাহরণ।
+
+বাস্তব ব্লকচেইন যেমন
+
+Bitcoin
+
+Ethereum
+
+এগুলোতে মাইনাররা ঠিক এভাবেই hash puzzle সমাধান করে।'''
+
+'''Probability = 1 / 16
+
+যদি n টি zero চাও:
+
+1
+/
+16
+𝑛
+1/16
+n
+
+Difficulty বাড়লে সময় exponential হারে বাড়ে।'''

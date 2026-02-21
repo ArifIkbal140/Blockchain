@@ -27,16 +27,26 @@ def build_tree(data):
 def prove_membership(tree, index):
     proof = []
     for level in tree[:-1]:
-        sibling = index^1
+        sibling = index ^ 1
+        
         if sibling < len(level):
-            proof.append(level[sibling])
+            if index % 2 == 0:
+                proof.append(("right", level[sibling]))
+            else:
+                proof.append(("left", level[sibling]))
+        
         index //= 2
     return proof
 
 def verify_proof(data, proof, root):
     cur = h(data)
-    for p in proof:
-        cur = h(cur+p)
+
+    for direction, p in proof:
+        if direction == "right":
+            cur = h(cur + p)
+        else:
+            cur = h(p + cur)
+
     return cur == root
 
 
@@ -48,7 +58,7 @@ root = tree[-1][0]
 print("Merkle Root:", root)
 
 # Membership proof for "C"
-index = tx.index("C")
+index = tx.index("B")
 proof = prove_membership(tree,index)
 
 print("\nProof:", proof)
@@ -57,3 +67,10 @@ print("Verification:", verify_proof("C",proof,root))
 # Non-membership test
 print("\nCheck non-member 'X':",
       verify_proof("X",proof,root))
+
+
+'''অর্থাৎ এমন একটি প্রোগ্রাম লিখতে হবে যা:
+
+একটি Merkle Tree তৈরি করবে
+
+প্রমাণ করবে কোনো ডাটা tree-এর সদস্য (membership) কিনা'''

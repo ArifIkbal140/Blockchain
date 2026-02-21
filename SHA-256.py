@@ -42,3 +42,10 @@ bc.add_block("Alice pays Bob 10")
 bc.add_block("Bob pays Charlie 5")
 
 bc.show()
+
+
+'''কিভাবে SHA-256 hash function ব্যবহার করা যায়
+
+কিভাবে simple blockchain তৈরি করা যায়
+
+প্রতিটি block-এ timestamp, data, previous hash, current hash থাকে'''
